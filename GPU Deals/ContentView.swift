@@ -188,33 +188,50 @@ struct ResultsView: View {
     }
 }
 
-// The "Config" view allows users to adjust the API URL and refresh cadence.
 struct ConfigView: View {
     @ObservedObject var viewModel: AppViewModel
     
+    // Adjust this if needed so that the longest key fits on one line
+    private let configKeyWidth: CGFloat = 160
+    
     var body: some View {
-        Form {
-            Section(header: Text("API Configuration")) {
-                TextField("API URL", text: $viewModel.apiUrl)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-            }
+        VStack(alignment: .leading, spacing: 16) {
             
-            Section(header: Text("Refresh Settings")) {
-                Stepper(value: $viewModel.cadence, in: 1...60) {
-                    Text("Cadence: \(viewModel.cadence) minutes")
+            // Title at the top
+            Text("Configuration")
+                .font(.title)
+                .padding(.top)
+            
+            // Use a simple VStack to lay out each config row
+            VStack(alignment: .leading, spacing: 12) {
+                
+                // Row 1: API URL
+                HStack(alignment: .center, spacing: 8) {
+                    Text("API URL:")
+                        .frame(width: configKeyWidth, alignment: .trailing)
+                        .lineLimit(1)
+                    
+                    TextField("", text: $viewModel.apiUrl)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .multilineTextAlignment(.leading)
+                }
+                
+                // Row 2: Cadence (minutes)
+                HStack(alignment: .center, spacing: 8) {
+                    Text("Cadence (minutes):")
+                        .frame(width: configKeyWidth, alignment: .trailing)
+                        .lineLimit(1)
+                    
+                    Stepper(value: $viewModel.cadence, in: 1...60) {
+                        // Show the numeric value inline with the stepper
+                        Text("\(viewModel.cadence)")
+                    }
                 }
             }
+            
+            Spacer() // Pushes everything to the top
         }
         .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     }
 }
-
-// App entry point.
-//@main
-//struct MyApp: App {
-//    var body: some Scene {
-//        WindowGroup {
-//            ContentView()
-//        }
-//    }
-//}
