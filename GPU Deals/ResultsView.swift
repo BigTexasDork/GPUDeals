@@ -47,7 +47,9 @@ struct ResultsView: View {
             // The table displaying the sorted results.
             Table(sortedResults) {
                 TableColumn("Model", value: \.id)
-                TableColumn("Brand", value: \.vendor)
+                TableColumn("Brand") { item in
+                    Text(item.vendor.uppercased())
+                }
                 TableColumn("3DMark") { item in
                     Text("\(item.benchmark)")
                 }
