@@ -144,12 +144,20 @@ struct ResultsView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            // Display current cadence and last API call time.
-            Text("Current Cadence: \(viewModel.cadence) minutes")
-            if let lastCall = viewModel.lastAPICall {
-                Text("Last API call: \(lastCall, formatter: Self.dateFormatter)")
-            } else {
-                Text("Last API call: Never")
+            // Use HStacks with a fixed-width label to align the colons.
+            HStack {
+                Text("Current Cadence:")
+                    .frame(width: 150, alignment: .trailing)
+                Text("\(viewModel.cadence) minutes")
+            }
+            HStack {
+                Text("Last API call:")
+                    .frame(width: 150, alignment: .trailing)
+                if let lastCall = viewModel.lastAPICall {
+                    Text("\(lastCall, formatter: Self.dateFormatter)")
+                } else {
+                    Text("Never")
+                }
             }
             
             // The table displaying the sorted results.
