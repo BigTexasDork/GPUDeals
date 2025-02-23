@@ -13,7 +13,7 @@ class AppViewModel: ObservableObject {
     @Published var lastAPICall: Date? = nil
     
     // Persist the cadence and apiUrl settings.
-    @AppStorage("cadence") var cadence: Int = 5 {
+    @AppStorage("cadence") var cadence: Int = 15 {
         didSet {
             startTimer()
         }
