@@ -1,32 +1,65 @@
 import SwiftUI
 import Combine
 
-// Define a simple model for the API data.
+// MARK: - Data Models
+
+// The API returns JSON with the "id", "vendor", "benchmark", and "listings" fields.
 struct ResultItem: Identifiable, Decodable {
-    let id: UUID = UUID() // Replace with a real identifier if available.
-    let name: String
-    let value: String
+    let id: String       // Maps to "id" (e.g., "RTX 4090")
+    let vendor: String   // Maps to "vendor" (e.g., "nvidia")
+    let benchmark: Int   // Maps to "benchmark" (e.g., 35000)
+    let listings: [String: Listing]
 }
 
-// ViewModel that handles API calls and configuration persistence.
+struct Listing: Decodable {
+    let price: String
+    let url: String
+}
+
+// Helper extension to convert a price string to a Double.
+extension String {
+    var currencyValue: Double? {
+        // Remove non-digit and non-decimal characters.
+        let filtered = self.filter { "0123456789.".contains($0) }
+        return Double(filtered)
+    }
+}
+
+// Computed properties to get the lowest price and the calculated "Value".
+extension ResultItem {
+    var lowestPrice: Double? {
+        let prices = listings.values.compactMap { $0.price.currencyValue }
+        return prices.min()
+    }
+    
+    var calculatedValue: Int? {
+        guard let lowest = lowestPrice, lowest != 0 else { return nil }
+        let computed = Double(benchmark) / lowest
+        return Int(computed.rounded())
+    }
+}
+
+// The ViewModel handles API calls and persists settings using @AppStorage.
 class AppViewModel: ObservableObject {
     @Published var results: [ResultItem] = []
     
-    // Use @AppStorage to persist the settings.
+    // Persist the cadence and apiUrl settings.
     @AppStorage("cadence") var cadence: Int = 5 {
         didSet {
             startTimer()
         }
     }
-    @AppStorage("apiUrl") var apiUrl: String = "https://api.example.com/data"
+    @AppStorage("apiUrl") var apiUrl: String = "https://api.gpudeals.net/"
     
     private var timerCancellable: AnyCancellable?
     
     init() {
+        // fetch the data
+        fetchData()
         startTimer()
     }
     
-    // Sets up a timer that fires every `cadence` minutes.
+    // Sets up a timer that fires every 'cadence' minutes.
     func startTimer() {
         timerCancellable?.cancel()
         let cadenceSeconds = TimeInterval(cadence * 60)
@@ -83,21 +116,34 @@ struct ContentView: View {
     }
 }
 
-// The "Results" view displays a table of data returned by the API.
+
+// The "Results" view displays a table with five columns.
 struct ResultsView: View {
     @ObservedObject var viewModel: AppViewModel
     
     var body: some View {
-        // Using Table (available in macOS 12+). Replace with List for earlier versions.
         Table(viewModel.results) {
-            TableColumn("Name", value: \.name)
-            TableColumn("Value", value: \.value)
+            TableColumn("Model", value: \.id)
+            TableColumn("Brand", value: \.vendor)
+            TableColumn("3DMark") { item in
+                Text("\(item.benchmark)")
+            }
+            TableColumn("Value") { item in
+                if let calcValue = item.calculatedValue {
+                    Text("\(calcValue)")
+                } else {
+                    Text("")  // Blank if calculation isn't available.
+                }
+            }
+            TableColumn("Price") { _ in
+                Text("")  // Placeholder; blank for now.
+            }
         }
         .padding()
     }
 }
 
-// The "Config" view lets the user set the cadence (in minutes) and the API URL.
+// The "Config" view allows users to adjust the API URL and refresh cadence.
 struct ConfigView: View {
     @ObservedObject var viewModel: AppViewModel
     
