@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		662162742D6B8D9D0012B2EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6621625A2D6B8D9C0012B2EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 662162612D6B8D9C0012B2EA;
+			remoteInfo = "GPU Deals";
+		};
+		6621627E2D6B8D9D0012B2EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6621625A2D6B8D9C0012B2EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 662162612D6B8D9C0012B2EA;
+			remoteInfo = "GPU Deals";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		662162622D6B8D9C0012B2EA /* GPU Deals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GPU Deals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		662162732D6B8D9D0012B2EA /* GPU DealsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GPU DealsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6621627D2D6B8D9D0012B2EA /* GPU DealsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GPU DealsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		662162642D6B8D9C0012B2EA /* GPU Deals */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "GPU Deals";
+			sourceTree = "<group>";
+		};
+		662162762D6B8D9D0012B2EA /* GPU DealsTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "GPU DealsTests";
+			sourceTree = "<group>";
+		};
+		662162802D6B8D9D0012B2EA /* GPU DealsUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "GPU DealsUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6621625F2D6B8D9C0012B2EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		662162702D6B8D9D0012B2EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6621627A2D6B8D9D0012B2EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		662162592D6B8D9C0012B2EA = {
+			isa = PBXGroup;
+			children = (
+				662162642D6B8D9C0012B2EA /* GPU Deals */,
+				662162762D6B8D9D0012B2EA /* GPU DealsTests */,
+				662162802D6B8D9D0012B2EA /* GPU DealsUITests */,
+				662162632D6B8D9C0012B2EA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		662162632D6B8D9C0012B2EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				662162622D6B8D9C0012B2EA /* GPU Deals.app */,
+				662162732D6B8D9D0012B2EA /* GPU DealsTests.xctest */,
+				6621627D2D6B8D9D0012B2EA /* GPU DealsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		662162612D6B8D9C0012B2EA /* GPU Deals */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 662162872D6B8D9D0012B2EA /* Build configuration list for PBXNativeTarget "GPU Deals" */;
+			buildPhases = (
+				6621625E2D6B8D9C0012B2EA /* Sources */,
+				6621625F2D6B8D9C0012B2EA /* Frameworks */,
+				662162602D6B8D9C0012B2EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				662162642D6B8D9C0012B2EA /* GPU Deals */,
+			);
+			name = "GPU Deals";
+			packageProductDependencies = (
+			);
+			productName = "GPU Deals";
+			productReference = 662162622D6B8D9C0012B2EA /* GPU Deals.app */;
+			productType = "com.apple.product-type.application";
+		};
+		662162722D6B8D9D0012B2EA /* GPU DealsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6621628A2D6B8D9D0012B2EA /* Build configuration list for PBXNativeTarget "GPU DealsTests" */;
+			buildPhases = (
+				6621626F2D6B8D9D0012B2EA /* Sources */,
+				662162702D6B8D9D0012B2EA /* Frameworks */,
+				662162712D6B8D9D0012B2EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				662162752D6B8D9D0012B2EA /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				662162762D6B8D9D0012B2EA /* GPU DealsTests */,
+			);
+			name = "GPU DealsTests";
+			packageProductDependencies = (
+			);
+			productName = "GPU DealsTests";
+			productReference = 662162732D6B8D9D0012B2EA /* GPU DealsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6621627C2D6B8D9D0012B2EA /* GPU DealsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6621628D2D6B8D9D0012B2EA /* Build configuration list for PBXNativeTarget "GPU DealsUITests" */;
+			buildPhases = (
+				662162792D6B8D9D0012B2EA /* Sources */,
+				6621627A2D6B8D9D0012B2EA /* Frameworks */,
+				6621627B2D6B8D9D0012B2EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6621627F2D6B8D9D0012B2EA /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				662162802D6B8D9D0012B2EA /* GPU DealsUITests */,
+			);
+			name = "GPU DealsUITests";
+			packageProductDependencies = (
+			);
+			productName = "GPU DealsUITests";
+			productReference = 6621627D2D6B8D9D0012B2EA /* GPU DealsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6621625A2D6B8D9C0012B2EA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					662162612D6B8D9C0012B2EA = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					662162722D6B8D9D0012B2EA = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 662162612D6B8D9C0012B2EA;
+					};
+					6621627C2D6B8D9D0012B2EA = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 662162612D6B8D9C0012B2EA;
+					};
+				};
+			};
+			buildConfigurationList = 6621625D2D6B8D9C0012B2EA /* Build configuration list for PBXProject "GPU Deals" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 662162592D6B8D9C0012B2EA;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 662162632D6B8D9C0012B2EA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				662162612D6B8D9C0012B2EA /* GPU Deals */,
+				662162722D6B8D9D0012B2EA /* GPU DealsTests */,
+				6621627C2D6B8D9D0012B2EA /* GPU DealsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		662162602D6B8D9C0012B2EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		662162712D6B8D9D0012B2EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6621627B2D6B8D9D0012B2EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6621625E2D6B8D9C0012B2EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6621626F2D6B8D9D0012B2EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		662162792D6B8D9D0012B2EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		662162752D6B8D9D0012B2EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 662162612D6B8D9C0012B2EA /* GPU Deals */;
+			targetProxy = 662162742D6B8D9D0012B2EA /* PBXContainerItemProxy */;
+		};
+		6621627F2D6B8D9D0012B2EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 662162612D6B8D9C0012B2EA /* GPU Deals */;
+			targetProxy = 6621627E2D6B8D9D0012B2EA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		662162852D6B8D9D0012B2EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		662162862D6B8D9D0012B2EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		662162882D6B8D9D0012B2EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "GPU Deals/GPU_Deals.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GPU Deals/Preview Content\"";
+				DEVELOPMENT_TEAM = SACY35H8FL;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "joefranklin.GPU-Deals";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		662162892D6B8D9D0012B2EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "GPU Deals/GPU_Deals.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GPU Deals/Preview Content\"";
+				DEVELOPMENT_TEAM = SACY35H8FL;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "joefranklin.GPU-Deals";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		6621628B2D6B8D9D0012B2EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SACY35H8FL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "joefranklin.GPU-DealsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GPU Deals.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GPU Deals";
+			};
+			name = Debug;
+		};
+		6621628C2D6B8D9D0012B2EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SACY35H8FL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "joefranklin.GPU-DealsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GPU Deals.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GPU Deals";
+			};
+			name = Release;
+		};
+		6621628E2D6B8D9D0012B2EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SACY35H8FL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "joefranklin.GPU-DealsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "GPU Deals";
+			};
+			name = Debug;
+		};
+		6621628F2D6B8D9D0012B2EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SACY35H8FL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "joefranklin.GPU-DealsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "GPU Deals";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6621625D2D6B8D9C0012B2EA /* Build configuration list for PBXProject "GPU Deals" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				662162852D6B8D9D0012B2EA /* Debug */,
+				662162862D6B8D9D0012B2EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		662162872D6B8D9D0012B2EA /* Build configuration list for PBXNativeTarget "GPU Deals" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				662162882D6B8D9D0012B2EA /* Debug */,
+				662162892D6B8D9D0012B2EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6621628A2D6B8D9D0012B2EA /* Build configuration list for PBXNativeTarget "GPU DealsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6621628B2D6B8D9D0012B2EA /* Debug */,
+				6621628C2D6B8D9D0012B2EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6621628D2D6B8D9D0012B2EA /* Build configuration list for PBXNativeTarget "GPU DealsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6621628E2D6B8D9D0012B2EA /* Debug */,
+				6621628F2D6B8D9D0012B2EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6621625A2D6B8D9C0012B2EA /* Project object */;
+}
