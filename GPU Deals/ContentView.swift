@@ -42,6 +42,7 @@ extension ResultItem {
 // The ViewModel handles API calls and persists settings using @AppStorage.
 class AppViewModel: ObservableObject {
     @Published var results: [ResultItem] = []
+    @Published var lastAPICall: Date? = nil
     
     // Persist the cadence and apiUrl settings.
     @AppStorage("cadence") var cadence: Int = 5 {
@@ -72,6 +73,11 @@ class AppViewModel: ObservableObject {
     
     // API call to fetch and decode data.
     func fetchData() {
+        // Record the time of the API call.
+        DispatchQueue.main.async {
+            self.lastAPICall = Date()
+        }
+        
         guard let url = URL(string: apiUrl) else {
             print("Invalid URL: \(apiUrl)")
             return
@@ -117,34 +123,54 @@ struct ContentView: View {
 }
 
 
-// The "Results" view displays a table with five columns.
+// The Results view now displays the current cadence and the time of the last API call above the table.
 struct ResultsView: View {
     @ObservedObject var viewModel: AppViewModel
     
-    // Compute a sorted version of the results array.
+    // Sorted results by calculated "Value" in descending order.
     var sortedResults: [ResultItem] {
         viewModel.results.sorted {
             ($0.calculatedValue ?? 0) > ($1.calculatedValue ?? 0)
         }
     }
     
+    // Date formatter for displaying the last API call time.
+    static let dateFormatter: DateFormatter = {
+         let formatter = DateFormatter()
+         formatter.dateStyle = .medium
+         formatter.timeStyle = .medium
+         return formatter
+    }()
+    
     var body: some View {
-        Table(sortedResults) {
-            TableColumn("Model", value: \.id)
-            TableColumn("Brand", value: \.vendor)
-            TableColumn("3DMark") { item in
-                Text("\(item.benchmark)")
+        VStack(alignment: .leading, spacing: 10) {
+            // Display current cadence and last API call time.
+            Text("Current Cadence: \(viewModel.cadence) minutes")
+            if let lastCall = viewModel.lastAPICall {
+                Text("Last API call: \(lastCall, formatter: Self.dateFormatter)")
+            } else {
+                Text("Last API call: Never")
             }
-            TableColumn("Value") { item in
-                if let calcValue = item.calculatedValue {
-                    Text("\(calcValue)")
-                } else {
-                    Text("")  // Blank if calculation isn't available.
+            
+            // The table displaying the sorted results.
+            Table(sortedResults) {
+                TableColumn("Model", value: \.id)
+                TableColumn("Brand", value: \.vendor)
+                TableColumn("3DMark") { item in
+                    Text("\(item.benchmark)")
+                }
+                TableColumn("Value") { item in
+                    if let calcValue = item.calculatedValue {
+                        Text("\(calcValue)")
+                    } else {
+                        Text("")
+                    }
+                }
+                TableColumn("Price") { _ in
+                    Text("")  // Placeholder for Price column.
                 }
             }
-            TableColumn("Price") { _ in
-                Text("")  // Placeholder; blank for now.
-            }
+            .padding(.top)
         }
         .padding()
     }
