@@ -121,8 +121,15 @@ struct ContentView: View {
 struct ResultsView: View {
     @ObservedObject var viewModel: AppViewModel
     
+    // Compute a sorted version of the results array.
+    var sortedResults: [ResultItem] {
+        viewModel.results.sorted {
+            ($0.calculatedValue ?? 0) > ($1.calculatedValue ?? 0)
+        }
+    }
+    
     var body: some View {
-        Table(viewModel.results) {
+        Table(sortedResults) {
             TableColumn("Model", value: \.id)
             TableColumn("Brand", value: \.vendor)
             TableColumn("3DMark") { item in
