@@ -7,7 +7,6 @@
 import SwiftUI
 import Combine
 
-// The Results view now displays the current cadence and the time of the last API call above the table.
 struct ResultsView: View {
     @ObservedObject var viewModel: AppViewModel
     
@@ -28,7 +27,7 @@ struct ResultsView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            // Use HStacks with a fixed-width label to align the colons.
+            // Display current cadence and last API call time.
             HStack {
                 Text("Current Cadence:")
                     .frame(width: 150, alignment: .trailing)
@@ -44,7 +43,7 @@ struct ResultsView: View {
                 }
             }
             
-            // The table displaying the sorted results.
+            // Table displaying the sorted results.
             Table(sortedResults) {
                 TableColumn("Model", value: \.id)
                 TableColumn("Brand") { item in
@@ -60,8 +59,21 @@ struct ResultsView: View {
                         Text("")
                     }
                 }
-                TableColumn("Price") { _ in
-                    Text("")  // Placeholder for Price column.
+                TableColumn("Amazon") { item in
+                    if let amazonPrice = item.listings["Amazon"]?.price.currencyValue {
+                        let roundedDollars = Int(amazonPrice.rounded())
+                        Text("$\(roundedDollars)")
+                    } else {
+                        Text("")
+                    }
+                }
+                TableColumn("eBay") { item in
+                    if let ebayPrice = item.listings["eBay"]?.price.currencyValue {
+                        let roundedDollars = Int(ebayPrice.rounded())
+                        Text("$\(roundedDollars)")
+                    } else {
+                        Text("")
+                    }
                 }
             }
             .padding(.top)
