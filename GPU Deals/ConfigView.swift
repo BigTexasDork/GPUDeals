@@ -46,6 +46,20 @@ struct ConfigView: View {
                         Text("\(viewModel.cadence)")
                     }
                 }
+                
+                Text("Alerts (coming soon)")
+                    .font(.title)
+                
+                // Quick debugging view: list of alerts displaying only hours and minutes.
+                List(viewModel.alerts) { alert in
+                    VStack(alignment: .leading) {
+                        Text(alert.brand)
+                            .font(.headline)
+                        Text("Price: $\(alert.price)")
+                        Text("Ends: \(alert.endDateTime, formatter: timeFormatter)")
+                            .font(.caption)
+                    }
+                }
             }
             
             Spacer() // Pushes everything to the top
@@ -54,3 +68,10 @@ struct ConfigView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     }
 }
+
+// Formatter that displays only hours and minutes.
+private let timeFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "HH:mm"
+    return formatter
+}()
