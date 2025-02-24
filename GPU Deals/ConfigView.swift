@@ -13,6 +13,14 @@ struct ConfigView: View {
     // Adjust this if needed so that the longest key fits on one line
     private let configKeyWidth: CGFloat = 160
     
+    // This formatter should match the one in ResultsView.
+    static let dateFormatter: DateFormatter = {
+         let formatter = DateFormatter()
+         formatter.dateStyle = .medium
+         formatter.timeStyle = .medium
+         return formatter
+    }()
+
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             
@@ -50,13 +58,13 @@ struct ConfigView: View {
                 Text("Alerts (coming soon)")
                     .font(.title)
                 
-                // Quick debugging view: list of alerts displaying only hours and minutes.
+                // Quick debugging view: list of alerts with formatted endDateTime
                 List(viewModel.alerts) { alert in
                     VStack(alignment: .leading) {
                         Text(alert.brand)
                             .font(.headline)
                         Text("Price: $\(alert.price)")
-                        Text("Ends: \(alert.endDateTime, formatter: timeFormatter)")
+                        Text("Ends: \(alert.endDateTime, formatter: ConfigView.dateFormatter)")
                             .font(.caption)
                     }
                 }

@@ -22,6 +22,12 @@ class AppViewModel: ObservableObject {
     @AppStorage("apiUrl") var apiUrl: String = "https://api.gpudeals.net/"
     @AppStorage("alerts") private var alertsData: String = ""
     
+    private let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+        return formatter
+    }()
+    
     private var timerCancellable: AnyCancellable?
     
     init() {
@@ -70,38 +76,29 @@ class AppViewModel: ObservableObject {
     
     func loadAlerts() {
         let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(dateFormatter)
         
         if let data = alertsData.data(using: .utf8),
            let savedAlerts = try? decoder.decode([Alert].self, from: data) {
             self.alerts = savedAlerts
         } else {
-            // Updated hard-coded JSON using only "HH:mm" for the time.
-            let jsonString = """
-            [
-                {
-                    "brand": "RTX 3060 Ti",
-                    "price": 230,
-                    "endDateTime": "23:59"
-                },
-                {
-                    "brand": "RTX 3070",
-                    "price": 400,
-                    "endDateTime": "23:59"
-                }
+            // If no saved alerts, calculate default endDateTime as now + 12 hours.
+            let defaultDate = Date().addingTimeInterval(12 * 60 * 60)
+            let defaultAlerts = [
+                Alert(brand: "RTX 3060 Ti", price: 230, endDateTime: defaultDate),
+                Alert(brand: "RTX 3070", price: 400, endDateTime: defaultDate)
             ]
-            """
-            if let jsonData = jsonString.data(using: .utf8),
-               let hardCodedAlerts = try? decoder.decode([Alert].self, from: jsonData) {
-                self.alerts = hardCodedAlerts
-                saveAlerts() // Persist the hard-coded alerts.
-            }
+            self.alerts = defaultAlerts
+            saveAlerts()
         }
     }
     
     func saveAlerts() {
         let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .formatted(dateFormatter)
         if let data = try? encoder.encode(alerts),
            let jsonString = String(data: data, encoding: .utf8) {
             alertsData = jsonString
         }
-    }}
+    }
+}
