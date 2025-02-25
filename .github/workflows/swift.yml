@@ -12,10 +12,6 @@ on:
 jobs:
   build:
     runs-on: macos-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: "./GPU Deals"
 
     steps:
       - uses: actions/checkout@v4
