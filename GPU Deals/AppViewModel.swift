@@ -34,6 +34,16 @@ class AppViewModel: ObservableObject {
     func isGpuInAlerts(_ gpu: String) -> Bool {
         return alerts.contains { $0.gpu == gpu }
     }
+
+    func addAlert(for brand: String) {
+        // noop
+        return
+    }
+
+    func deleteAlert(for brand: String) {
+        // noop
+        return
+    }
     
     init() {
         startTimer()
