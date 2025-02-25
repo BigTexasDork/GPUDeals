@@ -15,7 +15,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Set Xcode version to Xcode 15
+        run: sudo xcode-select -s /Applications/Xcode_16.2.0.app/Contents/Developer
+      
+      - name: Verify Xcode version
+        run: xcodebuild -version
+
       - name: Build with xcodebuild
         run: xcodebuild -project "GPU Deals.xcodeproj" -scheme "GPU Deals" -destination 'platform=macOS' build
+
       - name: Run tests with xcodebuild
         run: xcodebuild -project "GPU Deals.xcodeproj" -scheme "GPU Deals" -destination 'platform=macOS' test
