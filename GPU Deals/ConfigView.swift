@@ -61,7 +61,7 @@ struct ConfigView: View {
                 // Quick debugging view: list of alerts with formatted endDateTime
                 List(viewModel.alerts) { alert in
                     VStack(alignment: .leading) {
-                        Text(alert.brand)
+                        Text(alert.gpu)
                             .font(.headline)
                         Text("Price: $\(alert.price)")
                         Text("Ends: \(alert.endDateTime, formatter: ConfigView.dateFormatter)")

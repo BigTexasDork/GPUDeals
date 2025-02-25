@@ -30,6 +30,11 @@ class AppViewModel: ObservableObject {
     
     private var timerCancellable: AnyCancellable?
     
+    // function check if the gpu is a in the alerts array
+    func isGpuInAlerts(_ gpu: String) -> Bool {
+        return alerts.contains { $0.gpu == gpu }
+    }
+    
     init() {
         startTimer()
         loadAlerts()

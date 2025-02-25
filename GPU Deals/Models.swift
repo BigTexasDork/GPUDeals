@@ -22,7 +22,7 @@ struct Listing: Decodable {
 // Alerts
 struct Alert: Codable, Identifiable {
     let id: UUID
-    let brand: String
+    let gpu: String
     let price: Int
     let endDateTime: Date
 
@@ -30,7 +30,7 @@ struct Alert: Codable, Identifiable {
         // Truncate the date to whole seconds
         let truncatedTime = Date(timeIntervalSince1970: floor(endDateTime.timeIntervalSince1970))
         self.id = id
-        self.brand = brand
+        self.gpu = brand
         self.price = price
         self.endDateTime = truncatedTime
     }

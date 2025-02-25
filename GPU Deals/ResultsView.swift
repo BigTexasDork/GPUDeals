@@ -45,6 +45,18 @@ struct ResultsView: View {
             
             // Table displaying the sorted results.
             Table(sortedResults) {
+                TableColumn("") { item in
+                    if viewModel.isGpuInAlerts(item.id) {
+                        Circle()
+                            .fill(Color.red)
+                            .frame(width: 10, height: 10)
+                    } else {
+                        Circle()
+                            .fill(Color.clear)
+                            .frame(width: 10, height: 10)
+                    }
+                }
+                .width(15)
                 TableColumn("Model", value: \.id)
                 TableColumn("Brand") { item in
                     Text(item.vendor.uppercased())
