@@ -16,6 +16,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set up keychain and import certificate
+        env:
+          CERTIFICATE_PASSWORD: ${{ secrets.MAC_DEV_CERTIFICATE_PASSWORD }}
+
+        run: |
+            # Create and configure a temporary keychain
+            security create-keychain -p "" build.keychain
+            security default-keychain -s build.keychain
+            security unlock-keychain -p "" build.keychain
+
+            # Decode the certificate from the secret and save it as a file
+            echo "${{ secrets.MAC_DEV_CERTIFICATE_BASE64 }}" | base64 --decode > certificate.p12
+
+            # Import the certificate into the keychain
+            security import certificate.p12 -k build.keychain -P "$CERTIFICATE_PASSWORD" -T /usr/bin/codesign
+
+            # List keychains (optional) to verify your build.keychain is active
+            security list-keychains -d user
+      
       - name: Set Xcode version to Xcode 15
         run: sudo xcode-select -s /Applications/Xcode_16.2.0.app/Contents/Developer
       
